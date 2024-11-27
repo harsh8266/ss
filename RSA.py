@@ -1,3 +1,26 @@
+ Algorithm:
+ Key Generation:
+ Choose two large prime numbers, p and q.
+ Calculate n = p×q. n will be used as the modulus for
+both the public and private keys.
+ Compute the totient ϕ(n)=(p−1) × (q−1).
+ Choose an integer e such that 1 < e < ϕ(n) and gcd (e,
+ϕ(n)) = 1.e is the public exponent.
+ Calculate the private exponent d such that
+e×d≡1 (mod ϕ(n)). This means d is the modular
+multiplicative inverse of e modulo ϕ(n).
+ Public and Private Keys:
+ The public key is (e,n).
+ The private key is (d,n).
+ Encryption Process:
+ Represent the plaintext message as a numerical value
+mmm (e.g., using ASCII values for characters).
+ Compute the ciphertext ccc using the public key:
+C = m^e mod n
+ Decryption Process:
+ Use the private key to recover the original message m
+from the ciphertext : m = c^d mod n.
+
 import random
 import math
 
